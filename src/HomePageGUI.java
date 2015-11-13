@@ -1,8 +1,9 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
-import com.intellij.uiDesigner.core.*;
-import info.clearthought.layout.*;
-import org.jdesktop.swingx.*;
+//import com.intellij.uiDesigner.core.*;
+//import info.clearthought.layout.*;
+//import org.jdesktop.swingx.*;
 /*
  * Created by JFormDesigner on Thu Nov 12 19:37:36 EST 2015
  */
@@ -15,6 +16,12 @@ import org.jdesktop.swingx.*;
 public class HomePageGUI extends JSplitPane {
     public HomePageGUI() {
         initComponents();
+    }
+
+    private void button1ActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        //scrollPane1;
+        textField2.setVisible(true);
     }
 
     private void initComponents() {
@@ -48,6 +55,8 @@ public class HomePageGUI extends JSplitPane {
 
         //---- textField1 ----
         textField1.setText("Chirpy");
+        textField1.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+        textField1.setHorizontalAlignment(SwingConstants.CENTER);
         setTopComponent(textField1);
 
         //======== splitPane1 ========
@@ -71,6 +80,7 @@ public class HomePageGUI extends JSplitPane {
 
                         //---- button1 ----
                         button1.setText("Bio");
+                        button1.addActionListener(e -> button1ActionPerformed(e));
                         splitPane5.setTopComponent(button1);
 
                         //---- button2 ----
